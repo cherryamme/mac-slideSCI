@@ -4,7 +4,10 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
+const publicBase = process.env.PUBLIC_BASE_PATH ?? "/";
+
 export default defineConfig({
+  base: publicBase,
   plugins: [react(), basicSsl()],
   server: {
     port: 3000,
