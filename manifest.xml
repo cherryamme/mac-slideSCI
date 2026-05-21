@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>8f65df88-f0b9-4d4a-b95d-7a31f86d5a4f</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>mac-slideSCI</ProviderName>
+  <DefaultLocale>zh-CN</DefaultLocale>
+  <DisplayName DefaultValue="mac-slideSCI"/>
+  <Description DefaultValue="SCI presentation tools for PowerPoint on Mac."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://localhost:3000/src/taskpane/index.html"/>
+  <AppDomains>
+    <AppDomain>https://localhost:3000</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Presentation"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="PowerPointApi" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/src/taskpane/index.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="Taskpane.Url"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="MacSlideSci.Tab">
+              <Group id="MacSlideSci.Group.Layout">
+                <Label resid="Layout.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Grid.16"/><bt:Image size="32" resid="Grid.32"/><bt:Image size="80" resid="Grid.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.ArrangeHorizontal"><Label resid="ArrangeHorizontal.Label"/><Supertip><Title resid="ArrangeHorizontal.Label"/><Description resid="ArrangeHorizontal.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Horizontal.16"/><bt:Image size="32" resid="Horizontal.32"/><bt:Image size="80" resid="Horizontal.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>arrangeHorizontalCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.ArrangeVertical"><Label resid="ArrangeVertical.Label"/><Supertip><Title resid="ArrangeVertical.Label"/><Description resid="ArrangeVertical.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Vertical.16"/><bt:Image size="32" resid="Vertical.32"/><bt:Image size="80" resid="Vertical.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>arrangeVerticalCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.ArrangeGrid"><Label resid="ArrangeGrid.Label"/><Supertip><Title resid="ArrangeGrid.Label"/><Description resid="ArrangeGrid.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Grid.16"/><bt:Image size="32" resid="Grid.32"/><bt:Image size="80" resid="Grid.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>arrangeGridCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.EqualWidth"><Label resid="EqualWidth.Label"/><Supertip><Title resid="EqualWidth.Label"/><Description resid="EqualWidth.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="EqualWidth.16"/><bt:Image size="32" resid="EqualWidth.32"/><bt:Image size="80" resid="EqualWidth.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>equalizeWidthCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.EqualHeight"><Label resid="EqualHeight.Label"/><Supertip><Title resid="EqualHeight.Label"/><Description resid="EqualHeight.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="EqualHeight.16"/><bt:Image size="32" resid="EqualHeight.32"/><bt:Image size="80" resid="EqualHeight.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>equalizeHeightCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.EqualSize"><Label resid="EqualSize.Label"/><Supertip><Title resid="EqualSize.Label"/><Description resid="EqualSize.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="EqualSize.16"/><bt:Image size="32" resid="EqualSize.32"/><bt:Image size="80" resid="EqualSize.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>equalizeBothCommand</FunctionName></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.LayoutSettings">
+                <Label resid="LayoutSettings.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Settings.16"/><bt:Image size="32" resid="Settings.32"/><bt:Image size="80" resid="Settings.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.OpenLayoutSettings"><Label resid="OpenLayoutSettings.Label"/><Supertip><Title resid="OpenLayoutSettings.Label"/><Description resid="OpenLayoutSettings.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Settings.16"/><bt:Image size="32" resid="Settings.32"/><bt:Image size="80" resid="Settings.80"/></Icon><Action xsi:type="ShowTaskpane"><TaskpaneId>MacSlideSci.Taskpane</TaskpaneId><SourceLocation resid="Taskpane.Layout.Url"/></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Align">
+                <Label resid="Align.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="AlignCenter.16"/><bt:Image size="32" resid="AlignCenter.32"/><bt:Image size="80" resid="AlignCenter.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.AlignLeft"><Label resid="AlignLeft.Label"/><Supertip><Title resid="AlignLeft.Label"/><Description resid="AlignLeft.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="AlignLeft.16"/><bt:Image size="32" resid="AlignLeft.32"/><bt:Image size="80" resid="AlignLeft.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>alignLeftCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.AlignCenter"><Label resid="AlignCenter.Label"/><Supertip><Title resid="AlignCenter.Label"/><Description resid="AlignCenter.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="AlignCenter.16"/><bt:Image size="32" resid="AlignCenter.32"/><bt:Image size="80" resid="AlignCenter.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>alignCenterCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.AlignRight"><Label resid="AlignRight.Label"/><Supertip><Title resid="AlignRight.Label"/><Description resid="AlignRight.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="AlignRight.16"/><bt:Image size="32" resid="AlignRight.32"/><bt:Image size="80" resid="AlignRight.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>alignRightCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.AlignTop"><Label resid="AlignTop.Label"/><Supertip><Title resid="AlignTop.Label"/><Description resid="AlignTop.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="AlignTop.16"/><bt:Image size="32" resid="AlignTop.32"/><bt:Image size="80" resid="AlignTop.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>alignTopCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.AlignMiddle"><Label resid="AlignMiddle.Label"/><Supertip><Title resid="AlignMiddle.Label"/><Description resid="AlignMiddle.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="AlignMiddle.16"/><bt:Image size="32" resid="AlignMiddle.32"/><bt:Image size="80" resid="AlignMiddle.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>alignMiddleCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.AlignBottom"><Label resid="AlignBottom.Label"/><Supertip><Title resid="AlignBottom.Label"/><Description resid="AlignBottom.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="AlignBottom.16"/><bt:Image size="32" resid="AlignBottom.32"/><bt:Image size="80" resid="AlignBottom.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>alignBottomCommand</FunctionName></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Distribute">
+                <Label resid="Distribute.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="DistributeHorizontal.16"/><bt:Image size="32" resid="DistributeHorizontal.32"/><bt:Image size="80" resid="DistributeHorizontal.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.DistributeHorizontal"><Label resid="DistributeHorizontal.Label"/><Supertip><Title resid="DistributeHorizontal.Label"/><Description resid="DistributeHorizontal.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="DistributeHorizontal.16"/><bt:Image size="32" resid="DistributeHorizontal.32"/><bt:Image size="80" resid="DistributeHorizontal.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>distributeHorizontalCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.DistributeVertical"><Label resid="DistributeVertical.Label"/><Supertip><Title resid="DistributeVertical.Label"/><Description resid="DistributeVertical.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="DistributeVertical.16"/><bt:Image size="32" resid="DistributeVertical.32"/><bt:Image size="80" resid="DistributeVertical.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>distributeVerticalCommand</FunctionName></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Labels">
+                <Label resid="Labels.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Label.16"/><bt:Image size="32" resid="Label.32"/><bt:Image size="80" resid="Label.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.AddLabels"><Label resid="AddLabels.Label"/><Supertip><Title resid="AddLabels.Label"/><Description resid="AddLabels.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Label.16"/><bt:Image size="32" resid="Label.32"/><bt:Image size="80" resid="Label.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>addPanelLabelsCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.AddCaptions"><Label resid="AddCaptions.Label"/><Supertip><Title resid="AddCaptions.Label"/><Description resid="AddCaptions.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Caption.16"/><bt:Image size="32" resid="Caption.32"/><bt:Image size="80" resid="Caption.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>addCaptionsCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.OpenLabelCaptionSettings"><Label resid="OpenLabelCaptionSettings.Label"/><Supertip><Title resid="OpenLabelCaptionSettings.Label"/><Description resid="OpenLabelCaptionSettings.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Settings.16"/><bt:Image size="32" resid="Settings.32"/><bt:Image size="80" resid="Settings.80"/></Icon><Action xsi:type="ShowTaskpane"><TaskpaneId>MacSlideSci.Taskpane</TaskpaneId><SourceLocation resid="Taskpane.Labels.Url"/></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Geometry">
+                <Label resid="Geometry.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Copy.16"/><bt:Image size="32" resid="Copy.32"/><bt:Image size="80" resid="Copy.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.CopyGeometry"><Label resid="CopyGeometry.Label"/><Supertip><Title resid="CopyGeometry.Label"/><Description resid="CopyGeometry.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Copy.16"/><bt:Image size="32" resid="Copy.32"/><bt:Image size="80" resid="Copy.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>copyGeometryCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.PastePosition"><Label resid="PastePosition.Label"/><Supertip><Title resid="PastePosition.Label"/><Description resid="PastePosition.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Paste.16"/><bt:Image size="32" resid="Paste.32"/><bt:Image size="80" resid="Paste.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>pastePositionCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.PasteSize"><Label resid="PasteSize.Label"/><Supertip><Title resid="PasteSize.Label"/><Description resid="PasteSize.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Paste.16"/><bt:Image size="32" resid="Paste.32"/><bt:Image size="80" resid="Paste.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>pasteSizeCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.PasteGeometry"><Label resid="PasteGeometry.Label"/><Supertip><Title resid="PasteGeometry.Label"/><Description resid="PasteGeometry.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Paste.16"/><bt:Image size="32" resid="Paste.32"/><bt:Image size="80" resid="Paste.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>pasteGeometryCommand</FunctionName></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Annotate">
+                <Label resid="Annotate.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Arrow.16"/><bt:Image size="32" resid="Arrow.32"/><bt:Image size="80" resid="Arrow.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.InsertLine"><Label resid="InsertLine.Label"/><Supertip><Title resid="InsertLine.Label"/><Description resid="InsertLine.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Line.16"/><bt:Image size="32" resid="Line.32"/><bt:Image size="80" resid="Line.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>insertLineCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.InsertArrow"><Label resid="InsertArrow.Label"/><Supertip><Title resid="InsertArrow.Label"/><Description resid="InsertArrow.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Arrow.16"/><bt:Image size="32" resid="Arrow.32"/><bt:Image size="80" resid="Arrow.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>insertArrowCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.InsertCallout"><Label resid="InsertCallout.Label"/><Supertip><Title resid="InsertCallout.Label"/><Description resid="InsertCallout.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Callout.16"/><bt:Image size="32" resid="Callout.32"/><bt:Image size="80" resid="Callout.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>insertCalloutCommand</FunctionName></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Font">
+                <Label resid="Font.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Font.16"/><bt:Image size="32" resid="Font.32"/><bt:Image size="80" resid="Font.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.UnifyFontSelection"><Label resid="UnifyFontSelection.Label"/><Supertip><Title resid="UnifyFontSelection.Label"/><Description resid="UnifyFontSelection.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="FontApply.16"/><bt:Image size="32" resid="FontApply.32"/><bt:Image size="80" resid="FontApply.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>unifyFontSelectionCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.UnifyFontCurrentSlide"><Label resid="UnifyFontCurrentSlide.Label"/><Supertip><Title resid="UnifyFontCurrentSlide.Label"/><Description resid="UnifyFontCurrentSlide.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="FontApply.16"/><bt:Image size="32" resid="FontApply.32"/><bt:Image size="80" resid="FontApply.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>unifyFontCurrentSlideCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.UnifyFontAllSlides"><Label resid="UnifyFontAllSlides.Label"/><Supertip><Title resid="UnifyFontAllSlides.Label"/><Description resid="UnifyFontAllSlides.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="FontApply.16"/><bt:Image size="32" resid="FontApply.32"/><bt:Image size="80" resid="FontApply.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>unifyFontAllSlidesCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.OpenFontSettings"><Label resid="OpenFontSettings.Label"/><Supertip><Title resid="OpenFontSettings.Label"/><Description resid="OpenFontSettings.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Font.16"/><bt:Image size="32" resid="Font.32"/><bt:Image size="80" resid="Font.80"/></Icon><Action xsi:type="ShowTaskpane"><TaskpaneId>MacSlideSci.Taskpane</TaskpaneId><SourceLocation resid="Taskpane.Font.Url"/></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Combo">
+                <Label resid="Combo.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="ComboLibrary.16"/><bt:Image size="32" resid="ComboLibrary.32"/><bt:Image size="80" resid="ComboLibrary.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.SaveCombo"><Label resid="SaveCombo.Label"/><Supertip><Title resid="SaveCombo.Label"/><Description resid="SaveCombo.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="ComboSave.16"/><bt:Image size="32" resid="ComboSave.32"/><bt:Image size="80" resid="ComboSave.80"/></Icon><Action xsi:type="ExecuteFunction"><FunctionName>saveComboCommand</FunctionName></Action></Control>
+                <Control xsi:type="Button" id="MacSlideSci.OpenCombos"><Label resid="OpenCombos.Label"/><Supertip><Title resid="OpenCombos.Label"/><Description resid="OpenCombos.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="ComboLibrary.16"/><bt:Image size="32" resid="ComboLibrary.32"/><bt:Image size="80" resid="ComboLibrary.80"/></Icon><Action xsi:type="ShowTaskpane"><TaskpaneId>MacSlideSci.Taskpane</TaskpaneId><SourceLocation resid="Taskpane.Combos.Url"/></Action></Control>
+              </Group>
+              <Group id="MacSlideSci.Group.Settings">
+                <Label resid="Settings.GroupLabel"/>
+                <Icon><bt:Image size="16" resid="Settings.16"/><bt:Image size="32" resid="Settings.32"/><bt:Image size="80" resid="Settings.80"/></Icon>
+                <Control xsi:type="Button" id="MacSlideSci.OpenPane"><Label resid="OpenPane.Label"/><Supertip><Title resid="OpenPane.Label"/><Description resid="OpenPane.Tooltip"/></Supertip><Icon><bt:Image size="16" resid="Settings.16"/><bt:Image size="32" resid="Settings.32"/><bt:Image size="80" resid="Settings.80"/></Icon><Action xsi:type="ShowTaskpane"><TaskpaneId>MacSlideSci.Taskpane</TaskpaneId><SourceLocation resid="Taskpane.Geometry.Url"/></Action></Control>
+              </Group>
+              <Label resid="MacSlideSci.TabLabel"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/><bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/><bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Horizontal.16" DefaultValue="https://localhost:3000/assets/ribbon/horizontal-16.png"/><bt:Image id="Horizontal.32" DefaultValue="https://localhost:3000/assets/ribbon/horizontal-32.png"/><bt:Image id="Horizontal.80" DefaultValue="https://localhost:3000/assets/ribbon/horizontal-80.png"/>
+        <bt:Image id="Vertical.16" DefaultValue="https://localhost:3000/assets/ribbon/vertical-16.png"/><bt:Image id="Vertical.32" DefaultValue="https://localhost:3000/assets/ribbon/vertical-32.png"/><bt:Image id="Vertical.80" DefaultValue="https://localhost:3000/assets/ribbon/vertical-80.png"/>
+        <bt:Image id="Grid.16" DefaultValue="https://localhost:3000/assets/ribbon/grid-16.png"/><bt:Image id="Grid.32" DefaultValue="https://localhost:3000/assets/ribbon/grid-32.png"/><bt:Image id="Grid.80" DefaultValue="https://localhost:3000/assets/ribbon/grid-80.png"/>
+        <bt:Image id="EqualWidth.16" DefaultValue="https://localhost:3000/assets/ribbon/equal-width-16.png"/><bt:Image id="EqualWidth.32" DefaultValue="https://localhost:3000/assets/ribbon/equal-width-32.png"/><bt:Image id="EqualWidth.80" DefaultValue="https://localhost:3000/assets/ribbon/equal-width-80.png"/>
+        <bt:Image id="EqualHeight.16" DefaultValue="https://localhost:3000/assets/ribbon/equal-height-16.png"/><bt:Image id="EqualHeight.32" DefaultValue="https://localhost:3000/assets/ribbon/equal-height-32.png"/><bt:Image id="EqualHeight.80" DefaultValue="https://localhost:3000/assets/ribbon/equal-height-80.png"/>
+        <bt:Image id="EqualSize.16" DefaultValue="https://localhost:3000/assets/ribbon/equal-size-16.png"/><bt:Image id="EqualSize.32" DefaultValue="https://localhost:3000/assets/ribbon/equal-size-32.png"/><bt:Image id="EqualSize.80" DefaultValue="https://localhost:3000/assets/ribbon/equal-size-80.png"/>
+        <bt:Image id="AlignLeft.16" DefaultValue="https://localhost:3000/assets/ribbon/align-left-16.png"/><bt:Image id="AlignLeft.32" DefaultValue="https://localhost:3000/assets/ribbon/align-left-32.png"/><bt:Image id="AlignLeft.80" DefaultValue="https://localhost:3000/assets/ribbon/align-left-80.png"/>
+        <bt:Image id="AlignCenter.16" DefaultValue="https://localhost:3000/assets/ribbon/align-center-16.png"/><bt:Image id="AlignCenter.32" DefaultValue="https://localhost:3000/assets/ribbon/align-center-32.png"/><bt:Image id="AlignCenter.80" DefaultValue="https://localhost:3000/assets/ribbon/align-center-80.png"/>
+        <bt:Image id="AlignRight.16" DefaultValue="https://localhost:3000/assets/ribbon/align-right-16.png"/><bt:Image id="AlignRight.32" DefaultValue="https://localhost:3000/assets/ribbon/align-right-32.png"/><bt:Image id="AlignRight.80" DefaultValue="https://localhost:3000/assets/ribbon/align-right-80.png"/>
+        <bt:Image id="AlignTop.16" DefaultValue="https://localhost:3000/assets/ribbon/align-top-16.png"/><bt:Image id="AlignTop.32" DefaultValue="https://localhost:3000/assets/ribbon/align-top-32.png"/><bt:Image id="AlignTop.80" DefaultValue="https://localhost:3000/assets/ribbon/align-top-80.png"/>
+        <bt:Image id="AlignMiddle.16" DefaultValue="https://localhost:3000/assets/ribbon/align-middle-16.png"/><bt:Image id="AlignMiddle.32" DefaultValue="https://localhost:3000/assets/ribbon/align-middle-32.png"/><bt:Image id="AlignMiddle.80" DefaultValue="https://localhost:3000/assets/ribbon/align-middle-80.png"/>
+        <bt:Image id="AlignBottom.16" DefaultValue="https://localhost:3000/assets/ribbon/align-bottom-16.png"/><bt:Image id="AlignBottom.32" DefaultValue="https://localhost:3000/assets/ribbon/align-bottom-32.png"/><bt:Image id="AlignBottom.80" DefaultValue="https://localhost:3000/assets/ribbon/align-bottom-80.png"/>
+        <bt:Image id="DistributeHorizontal.16" DefaultValue="https://localhost:3000/assets/ribbon/distribute-horizontal-16.png"/><bt:Image id="DistributeHorizontal.32" DefaultValue="https://localhost:3000/assets/ribbon/distribute-horizontal-32.png"/><bt:Image id="DistributeHorizontal.80" DefaultValue="https://localhost:3000/assets/ribbon/distribute-horizontal-80.png"/>
+        <bt:Image id="DistributeVertical.16" DefaultValue="https://localhost:3000/assets/ribbon/distribute-vertical-16.png"/><bt:Image id="DistributeVertical.32" DefaultValue="https://localhost:3000/assets/ribbon/distribute-vertical-32.png"/><bt:Image id="DistributeVertical.80" DefaultValue="https://localhost:3000/assets/ribbon/distribute-vertical-80.png"/>
+        <bt:Image id="Label.16" DefaultValue="https://localhost:3000/assets/ribbon/label-16.png"/><bt:Image id="Label.32" DefaultValue="https://localhost:3000/assets/ribbon/label-32.png"/><bt:Image id="Label.80" DefaultValue="https://localhost:3000/assets/ribbon/label-80.png"/>
+        <bt:Image id="Caption.16" DefaultValue="https://localhost:3000/assets/ribbon/caption-16.png"/><bt:Image id="Caption.32" DefaultValue="https://localhost:3000/assets/ribbon/caption-32.png"/><bt:Image id="Caption.80" DefaultValue="https://localhost:3000/assets/ribbon/caption-80.png"/>
+        <bt:Image id="Copy.16" DefaultValue="https://localhost:3000/assets/ribbon/copy-16.png"/><bt:Image id="Copy.32" DefaultValue="https://localhost:3000/assets/ribbon/copy-32.png"/><bt:Image id="Copy.80" DefaultValue="https://localhost:3000/assets/ribbon/copy-80.png"/>
+        <bt:Image id="Paste.16" DefaultValue="https://localhost:3000/assets/ribbon/paste-16.png"/><bt:Image id="Paste.32" DefaultValue="https://localhost:3000/assets/ribbon/paste-32.png"/><bt:Image id="Paste.80" DefaultValue="https://localhost:3000/assets/ribbon/paste-80.png"/>
+        <bt:Image id="Line.16" DefaultValue="https://localhost:3000/assets/ribbon/line-16.png"/><bt:Image id="Line.32" DefaultValue="https://localhost:3000/assets/ribbon/line-32.png"/><bt:Image id="Line.80" DefaultValue="https://localhost:3000/assets/ribbon/line-80.png"/>
+        <bt:Image id="Arrow.16" DefaultValue="https://localhost:3000/assets/ribbon/arrow-16.png"/><bt:Image id="Arrow.32" DefaultValue="https://localhost:3000/assets/ribbon/arrow-32.png"/><bt:Image id="Arrow.80" DefaultValue="https://localhost:3000/assets/ribbon/arrow-80.png"/>
+        <bt:Image id="Callout.16" DefaultValue="https://localhost:3000/assets/ribbon/callout-16.png"/><bt:Image id="Callout.32" DefaultValue="https://localhost:3000/assets/ribbon/callout-32.png"/><bt:Image id="Callout.80" DefaultValue="https://localhost:3000/assets/ribbon/callout-80.png"/>
+        <bt:Image id="Settings.16" DefaultValue="https://localhost:3000/assets/ribbon/settings-16.png"/><bt:Image id="Settings.32" DefaultValue="https://localhost:3000/assets/ribbon/settings-32.png"/><bt:Image id="Settings.80" DefaultValue="https://localhost:3000/assets/ribbon/settings-80.png"/>
+        <bt:Image id="Font.16" DefaultValue="https://localhost:3000/assets/ribbon/font-16.png"/><bt:Image id="Font.32" DefaultValue="https://localhost:3000/assets/ribbon/font-32.png"/><bt:Image id="Font.80" DefaultValue="https://localhost:3000/assets/ribbon/font-80.png"/>
+        <bt:Image id="FontApply.16" DefaultValue="https://localhost:3000/assets/ribbon/font-apply-16.png"/><bt:Image id="FontApply.32" DefaultValue="https://localhost:3000/assets/ribbon/font-apply-32.png"/><bt:Image id="FontApply.80" DefaultValue="https://localhost:3000/assets/ribbon/font-apply-80.png"/>
+        <bt:Image id="ComboSave.16" DefaultValue="https://localhost:3000/assets/ribbon/combo-save-16.png"/><bt:Image id="ComboSave.32" DefaultValue="https://localhost:3000/assets/ribbon/combo-save-32.png"/><bt:Image id="ComboSave.80" DefaultValue="https://localhost:3000/assets/ribbon/combo-save-80.png"/>
+        <bt:Image id="ComboLibrary.16" DefaultValue="https://localhost:3000/assets/ribbon/combo-library-16.png"/><bt:Image id="ComboLibrary.32" DefaultValue="https://localhost:3000/assets/ribbon/combo-library-32.png"/><bt:Image id="ComboLibrary.80" DefaultValue="https://localhost:3000/assets/ribbon/combo-library-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/src/taskpane/index.html"/>
+        <bt:Url id="Taskpane.Geometry.Url" DefaultValue="https://localhost:3000/src/taskpane/index.html?section=geometry"/>
+        <bt:Url id="Taskpane.Layout.Url" DefaultValue="https://localhost:3000/src/taskpane/index.html?section=layout"/>
+        <bt:Url id="Taskpane.Labels.Url" DefaultValue="https://localhost:3000/src/taskpane/index.html?section=labels"/>
+        <bt:Url id="Taskpane.Font.Url" DefaultValue="https://localhost:3000/src/taskpane/index.html?section=font"/>
+        <bt:Url id="Taskpane.Combos.Url" DefaultValue="https://localhost:3000/src/taskpane/index.html?section=combos"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/src/commands/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="打开 mac-slideSCI"/><bt:String id="MacSlideSci.TabLabel" DefaultValue="mac-slideSCI"/>
+        <bt:String id="Layout.GroupLabel" DefaultValue="排版"/><bt:String id="LayoutSettings.GroupLabel" DefaultValue="布局设置"/><bt:String id="Align.GroupLabel" DefaultValue="对齐"/><bt:String id="Distribute.GroupLabel" DefaultValue="均分"/><bt:String id="Labels.GroupLabel" DefaultValue="图注"/><bt:String id="Geometry.GroupLabel" DefaultValue="位置尺寸"/><bt:String id="Annotate.GroupLabel" DefaultValue="标注"/><bt:String id="Font.GroupLabel" DefaultValue="字体"/><bt:String id="Combo.GroupLabel" DefaultValue="组合"/><bt:String id="Settings.GroupLabel" DefaultValue="设置"/>
+        <bt:String id="ArrangeHorizontal.Label" DefaultValue="横排"/><bt:String id="ArrangeVertical.Label" DefaultValue="竖排"/><bt:String id="ArrangeGrid.Label" DefaultValue="网格"/><bt:String id="EqualWidth.Label" DefaultValue="等宽"/><bt:String id="EqualHeight.Label" DefaultValue="等高"/><bt:String id="EqualSize.Label" DefaultValue="等尺寸"/>
+        <bt:String id="AlignLeft.Label" DefaultValue="左对齐"/><bt:String id="AlignCenter.Label" DefaultValue="水平居中"/><bt:String id="AlignRight.Label" DefaultValue="右对齐"/><bt:String id="AlignTop.Label" DefaultValue="顶对齐"/><bt:String id="AlignMiddle.Label" DefaultValue="垂直居中"/><bt:String id="AlignBottom.Label" DefaultValue="底对齐"/>
+        <bt:String id="DistributeHorizontal.Label" DefaultValue="水平均分"/><bt:String id="DistributeVertical.Label" DefaultValue="垂直均分"/><bt:String id="AddLabels.Label" DefaultValue="A/B/C"/><bt:String id="AddCaptions.Label" DefaultValue="Caption"/>
+        <bt:String id="CopyGeometry.Label" DefaultValue="复制几何"/><bt:String id="PastePosition.Label" DefaultValue="粘贴位置"/><bt:String id="PasteSize.Label" DefaultValue="粘贴尺寸"/><bt:String id="PasteGeometry.Label" DefaultValue="粘贴全部"/>
+        <bt:String id="InsertLine.Label" DefaultValue="线条"/><bt:String id="InsertArrow.Label" DefaultValue="箭头"/><bt:String id="InsertCallout.Label" DefaultValue="Callout"/><bt:String id="OpenPane.Label" DefaultValue="工具面板"/><bt:String id="OpenLayoutSettings.Label" DefaultValue="布局设置"/><bt:String id="OpenLabelCaptionSettings.Label" DefaultValue="标签设置"/><bt:String id="UnifyFontSelection.Label" DefaultValue="统一选中"/><bt:String id="UnifyFontCurrentSlide.Label" DefaultValue="统一本页"/><bt:String id="UnifyFontAllSlides.Label" DefaultValue="统一所有页"/><bt:String id="OpenFontSettings.Label" DefaultValue="字体设置"/><bt:String id="SaveCombo.Label" DefaultValue="保存组合"/><bt:String id="OpenCombos.Label" DefaultValue="组合库"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="使用 mac-slideSCI 在 PowerPoint for Mac 中进行 SCI 图片排版、标签、标注和高清导出。"/>
+        <bt:String id="ArrangeHorizontal.Tooltip" DefaultValue="按当前设置横向排列选中对象。"/><bt:String id="ArrangeVertical.Tooltip" DefaultValue="按当前设置纵向排列选中对象。"/><bt:String id="ArrangeGrid.Tooltip" DefaultValue="按侧边面板保存的列数和间距排列为网格。"/><bt:String id="EqualWidth.Tooltip" DefaultValue="让选中对象使用相同宽度。"/><bt:String id="EqualHeight.Tooltip" DefaultValue="让选中对象使用相同高度。"/><bt:String id="EqualSize.Tooltip" DefaultValue="让选中对象使用相同宽度和高度。"/>
+        <bt:String id="AlignLeft.Tooltip" DefaultValue="将选中对象左对齐。"/><bt:String id="AlignCenter.Tooltip" DefaultValue="将选中对象水平居中对齐。"/><bt:String id="AlignRight.Tooltip" DefaultValue="将选中对象右对齐。"/><bt:String id="AlignTop.Tooltip" DefaultValue="将选中对象顶对齐。"/><bt:String id="AlignMiddle.Tooltip" DefaultValue="将选中对象垂直居中对齐。"/><bt:String id="AlignBottom.Tooltip" DefaultValue="将选中对象底对齐。"/>
+        <bt:String id="DistributeHorizontal.Tooltip" DefaultValue="将选中对象按水平方向等间距分布。"/><bt:String id="DistributeVertical.Tooltip" DefaultValue="将选中对象按垂直方向等间距分布。"/><bt:String id="AddLabels.Tooltip" DefaultValue="使用侧边面板保存的样式添加 A/B/C 标签。"/><bt:String id="AddCaptions.Tooltip" DefaultValue="使用侧边面板保存的样式添加 caption。"/>
+        <bt:String id="CopyGeometry.Tooltip" DefaultValue="复制第一个选中对象的位置和尺寸。"/><bt:String id="PastePosition.Tooltip" DefaultValue="将复制的位置应用到选中对象。"/><bt:String id="PasteSize.Tooltip" DefaultValue="将复制的尺寸应用到选中对象。"/><bt:String id="PasteGeometry.Tooltip" DefaultValue="将复制的位置和尺寸应用到选中对象。"/>
+        <bt:String id="InsertLine.Tooltip" DefaultValue="在当前幻灯片插入标注线。"/><bt:String id="InsertArrow.Tooltip" DefaultValue="在当前幻灯片插入箭头。"/><bt:String id="InsertCallout.Tooltip" DefaultValue="在当前幻灯片插入 callout 文本框。"/><bt:String id="OpenPane.Tooltip" DefaultValue="打开位置尺寸与标注面板。"/><bt:String id="OpenLayoutSettings.Tooltip" DefaultValue="打开右侧面板并定位到布局默认设置。"/><bt:String id="OpenLabelCaptionSettings.Tooltip" DefaultValue="打开右侧面板并定位到 Panel label 与 caption 设置。"/><bt:String id="UnifyFontSelection.Tooltip" DefaultValue="对选中对象应用当前字体设置。"/><bt:String id="UnifyFontCurrentSlide.Tooltip" DefaultValue="对当前幻灯片所有文本应用字体设置。"/><bt:String id="UnifyFontAllSlides.Tooltip" DefaultValue="对所有幻灯片文本应用字体设置。"/><bt:String id="OpenFontSettings.Tooltip" DefaultValue="打开右侧面板并定位到字体统一设置。"/><bt:String id="SaveCombo.Tooltip" DefaultValue="将当前选中对象保存为可在不同 PPT 中复用的可编辑组合。"/><bt:String id="OpenCombos.Tooltip" DefaultValue="打开右侧面板并管理已保存的组合。"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
